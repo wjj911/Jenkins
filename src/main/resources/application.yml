@@ -1,0 +1,41 @@
+server:
+  port: 8081
+  servlet:
+    jsp:
+      init-parameters:
+        development: true
+    context-path: /
+
+spring:
+  datasource:
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/spring_boot_ssmp?useSSL=false
+  mvc:
+    view:
+      prefix: /WEB-INF/page/
+      suffix: .jsp
+    static-path-pattern: /static/**
+    hiddenmethod:
+      filter:
+        enabled: true
+  servlet:
+    multipart:
+      max-request-size: 3MB
+
+mybatis-plus:
+  mapper-locations: classpath*:mapper/*.xml
+  type-aliases-package: com.dj.wj.entity
+  configuration:
+    map-underscore-to-camel-case: true
+    #log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+logging:
+  level:
+    com.dj.wj: debug
+
+
+
+
+
